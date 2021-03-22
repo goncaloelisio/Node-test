@@ -22,15 +22,11 @@ app.get('/', (req, res) => {
     res.render('formulario');
 });
 
-app.post('/utilizador', ()=>{
-    createUser
-    .then(() =>{
-        res.redirect('dados')
-        
-    }).catch((error) =>{
-        res.send("Erro: Pagamento não foi cadastrado com sucesso!" + error)
-    })
-});
+app.post('/utilizador',  (req,res) =>{
+    createUser(req,res)
+    res.render('dados', { nome, email, data_de_nascimento, morada, localidade} = req.body);
+
+})
 
 
 // Server

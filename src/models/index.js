@@ -17,7 +17,7 @@ const pool = new Pool ({
             if (error) {
               throw error
             }
-            res.status(201).send(`User added with ID: ${results.rows[0].id}`);
+            //res.status(201).send(`User added with ID: ${results.rows[0].id}`);
         });
     };
 
